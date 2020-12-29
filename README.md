@@ -3,7 +3,6 @@
 Wordsapy is a python interface for the WordsAPI (https://www.wordsapi.com/) that allows developers to retrieve information about English words.
 
 ## Install
-----------
 
 > Wordsapy is available on the Python Package Index (PyPI):
 https://pypi.python.org/pypi/wordsapy
@@ -15,14 +14,13 @@ $ pip install wordsapy
 ```
 
 ## Usages
-----------
+
 In order to use WordsAPI you need an API Key.
 
 > Get you Free API Key: https://rapidapi.com/dpventures/api/wordsapi/pricing
 
 
 ### Setting your API Key
-----------
 
 Initialize a *Dictionary* object and set your API Key.
 
@@ -42,7 +40,7 @@ $ export WORDS_API_KEY='your_api_key'
 See *examples/api_key.py* for other examples.
 
 ### Making queries
-----------
+
 Once done, you can use the *Dictionary* object instance to perform queries. 
 
 Most methods of the *Dictionary* class have the same name as WordsAPI endpoints.
@@ -78,11 +76,11 @@ for word.results.[0].definition
 ~~You can iterate through a *WordsapyDict* object as you would with a *dict* object.~~
 
 ## Examples
-----------
+
 All usage examples can be found in the */examples* folder of the project
 
 ## Tests
-----------
+
 You can run the tests via the command line. Your API Key must have been exported as an environment variable. 
 
 Place your terminal at the root of the project and run the following command.
@@ -92,5 +90,5 @@ $ python -m unittest discover tests "*_test.py"
 ```
 
 ## Greetings
-----------
+
 @AnthonyBloomer by [tmdbv3api](https://github.com/AnthonyBloomer/tmdbv3api), with which I learned how to create a python interface for an API. The wordsapy structure is based on his library.
