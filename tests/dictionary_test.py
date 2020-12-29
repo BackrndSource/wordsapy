@@ -424,7 +424,7 @@ class DictionaryTests(TestCase):
             page = 1
         )
         self.assertTrue(isinstance(search, DictObj))
-        self.assertIn(hasattr(search, 'word'))
+        self.assertTrue(hasattr(search, 'word'))
         self.assertEqual(len(search.word.replace(' ' ,'')), 6)
 
     def test_random(self):
