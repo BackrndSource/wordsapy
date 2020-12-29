@@ -1,5 +1,5 @@
 from unittest import TestCase
-from wordsapy import Dictionary, WordsapyDict
+from wordsapy import Dictionary, DictObj
 
 class DictionaryTests(TestCase):
     def setUp(self):
@@ -7,7 +7,7 @@ class DictionaryTests(TestCase):
 
     def test_get_word(self):
         word = self.dictionary.word('example')
-        self.assertTrue(isinstance(word, WordsapyDict))
+        self.assertTrue(isinstance(word, DictObj))
         
         self.assertTrue(hasattr(word, 'word'))
         self.assertEqual(word.word, 'example')
@@ -16,7 +16,7 @@ class DictionaryTests(TestCase):
         self.assertTrue(isinstance(word.results, list))
         self.assertGreater(len(word.results), 0)
         for result in word.results:
-            self.assertTrue(isinstance(result, WordsapyDict))
+            self.assertTrue(isinstance(result, DictObj))
             self.assertTrue(hasattr(result, 'definition'))
             self.assertTrue(isinstance(result.definition, str))
             self.assertTrue(hasattr(result, 'partOfSpeech'))
@@ -29,21 +29,21 @@ class DictionaryTests(TestCase):
                 self.assertTrue(isinstance(result.derivation, list))
         
         self.assertTrue(hasattr(word, 'syllables'))
-        self.assertTrue(isinstance(word.syllables, WordsapyDict))
+        self.assertTrue(isinstance(word.syllables, DictObj))
         self.assertTrue(hasattr(word.syllables, 'count'))
         self.assertTrue(isinstance(word.syllables.count, int))
         self.assertTrue(hasattr(word.syllables, 'list'))
         self.assertTrue(isinstance(word.syllables.list, list))
             
         self.assertTrue(hasattr(word, 'pronunciation'))
-        self.assertTrue(isinstance(word.syllables, WordsapyDict))
+        self.assertTrue(isinstance(word.syllables, DictObj))
 
     def test_get_definitions(self):
         definitions = self.dictionary.definitions('example')
         self.assertTrue(isinstance(definitions, list))
         self.assertGreater(len(definitions), 0)
         for definition in definitions:
-            self.assertTrue(isinstance(definition, WordsapyDict))
+            self.assertTrue(isinstance(definition, DictObj))
             self.assertTrue(hasattr(definition, 'definition'))
             self.assertTrue(hasattr(definition, 'partOfSpeech'))
     
@@ -233,7 +233,7 @@ class DictionaryTests(TestCase):
 
     def test_get_rhymes(self):
         rhymes = self.dictionary.rhymes('wind')
-        self.assertTrue(isinstance(rhymes, WordsapyDict))
+        self.assertTrue(isinstance(rhymes, DictObj))
         self.assertTrue(hasattr(rhymes, 'all'))
         self.assertTrue(hasattr(rhymes, 'noun'))
         self.assertTrue(hasattr(rhymes, 'verb'))
@@ -255,7 +255,7 @@ class DictionaryTests(TestCase):
 
     def test_get_frequency(self):
         frequency = self.dictionary.frequency('example')
-        self.assertTrue(isinstance(frequency, WordsapyDict))
+        self.assertTrue(isinstance(frequency, DictObj))
         self.assertTrue(hasattr(frequency, 'zipf'))
         self.assertTrue(hasattr(frequency, 'perMillion'))
         self.assertTrue(hasattr(frequency, 'diversity'))
@@ -423,17 +423,17 @@ class DictionaryTests(TestCase):
             limit = 50,
             page = 1
         )
-        self.assertTrue(isinstance(search, WordsapyDict))
-        self.assertTrue(hasattr(search, 'word'))
+        self.assertTrue(isinstance(search, DictObj))
+        self.assertIn(hasattr(search, 'word'))
         self.assertEqual(len(search.word.replace(' ' ,'')), 6)
 
     def test_random(self):
         search = self.dictionary.random()
-        self.assertTrue(isinstance(search, WordsapyDict))
+        self.assertTrue(isinstance(search, DictObj))
         self.assertTrue(hasattr(search, 'word'))
 
     def test_random_letters(self):
         search = self.dictionary.random(letters=6)
-        self.assertTrue(isinstance(search, WordsapyDict))
+        self.assertTrue(isinstance(search, DictObj))
         self.assertTrue(hasattr(search, 'word'))
         self.assertEqual(len(search.word.replace(' ' ,'')), 6)

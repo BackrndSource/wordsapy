@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="wordsapy",
-    version="1.0.0",
+    version="1.1.0",
     author="Sergio Contreras Agustí (backrndsource)",
     author_email="backrndsource@gmail.com",
     description="Wordsapy is a python integration for the WordsAPI, that allows developers to retrieve information about English words like a dictionary.",

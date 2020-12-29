@@ -3,7 +3,7 @@ import os
 import requests
 
 from .exceptions import WordsapyException
-from .dict_obj import WordsapyDict
+from .dict_obj import DictObj
 
 logger = logging.getLogger(__name__)
 
@@ -41,9 +41,9 @@ class WordsapyClient():
 
         if results_key:
             if isinstance(json[results_key], list):
-                return [WordsapyDict(item) if isinstance(item, dict) else item for item in json[results_key]]
+                return [DictObj(item) if isinstance(item, dict) else item for item in json[results_key]]
             else:
-                return WordsapyDict(json[results_key])
+                return DictObj(json[results_key])
 
-        return WordsapyDict(json)
+        return DictObj(json)
 
