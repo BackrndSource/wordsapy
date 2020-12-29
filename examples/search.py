@@ -20,6 +20,6 @@ search = dictionary.search(
     page = 1
 )
 
-print('Total results: ' + search.total)
+print('Total results: ' + str(search.total))
 for word in search.data:
     print(word)

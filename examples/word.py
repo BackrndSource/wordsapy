@@ -6,7 +6,7 @@ dictionary = Dictionary(api_key='')
 
 word = dictionary.word('example')
 
-print('Word: ' + word)
+print('Word: ' + str(word))
 # or
 print('Word: ' + word.word)
 
@@ -16,7 +16,7 @@ if hasattr(word, 'results'):
         print('Part of speech: ' + result.partOfSpeech)
 
 if hasattr(word, 'syllables'):
-    print('Syllables: ' + word.syllables.count)
+    print('Syllables: ' + str(word.syllables.count))
     print(', '.join(word.syllables.list))
 
 if hasattr(word, 'pronunciation'):

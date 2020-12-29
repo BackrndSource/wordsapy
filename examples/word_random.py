@@ -17,7 +17,7 @@ word = dictionary.random(
     # hasDetails = 'typeOf',
 )
 
-print('Word: ' + word)
+print('Word: ' + str(word))
 
 # Retrieve a word in the same way as dictionary.word()
 # See examples/word.py

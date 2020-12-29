@@ -7,10 +7,10 @@ dictionary = Dictionary(api_key='')
 frequency = dictionary.frequency('wind')
 
 if hasattr(frequency, 'zipf'):
-    print('Zipf: ' + frequency.zipf)
+    print('Zipf: ' + str(frequency.zipf))
 
 if hasattr(frequency, 'perMillion'):
-    print('Per million: ' + frequency.perMillion)
+    print('Per million: ' + str(frequency.perMillion))
 
 if hasattr(frequency, 'diversity'):
-    print('Diversity: ' + frequency.diversity)
+    print('Diversity: ' + str(frequency.diversity))
