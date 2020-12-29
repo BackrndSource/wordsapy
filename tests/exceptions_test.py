@@ -1,16 +1,8 @@
 from unittest import TestCase
 from wordsapy import Dictionary, WordsapyException
 
-class WordsapyExceptionApiKeyTests(TestCase):
-    def test_exception_blank_api_key(self):
-        dictionary = Dictionary(api_key='')
-        try:
-            dictionary.word('example')
-        except WordsapyException as exception:
-            self.assertTrue(isinstance(exception, WordsapyException))
-            self.assertEqual(exception.args[0], 'API key not found.')
 
-class WordsapyExceptionBadQueriesTests(TestCase):
+class WordsapyExceptionTests(TestCase):
     def setUp(self):
         self.dictionary = Dictionary()
 
