@@ -1,11 +1,8 @@
-import logging
 import os
 import requests
-
 from .exceptions import WordsapyException
 from .dict_obj import DictObj
 
-logger = logging.getLogger(__name__)
 
 class WordsapyClient():
 
