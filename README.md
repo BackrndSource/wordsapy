@@ -61,20 +61,25 @@ for result in results:
     print('Part of speech: ' + result.partOfSpeech)
 ```
 
-All responses will return a `WordsapyDict` object or a `list` object. All `dict` objects in the response will be transformed into `WordsapyDict`, so to access the data we will do it through the attributes. An example to illustrate this:
+All responses will return a `DictObj` object or a `list` object. All `dict` objects in the response will be transformed into `DictObj`. You can access to the data of a `DictObj` object as you would with a `dict` object, or do it through the attributes. An example to illustrate this:
 
 ```python
 dictionary = Dictionary()
 word = dictionary.word('example')
 
-# Bad way:
+# It is the same::
 for word['results'][0]['definition']
+for word.results[0]['definition']
+for word['results'][0].definition
+for word.results.[0].definition # I love this one
 
-# Good way:
-for word.results.[0].definition
+# DictObj is iterable:
+for key, value in word.items():
+    print(key)
+    print(value)
 ```
 
-~~You can iterate through a *WordsapyDict* object as you would with a *dict* object.~~
+
 
 ## Examples
 
