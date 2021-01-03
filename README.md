@@ -1,5 +1,5 @@
 # Wordsapy
-![Build Status](https://api.travis-ci.org/backrndsource/wordsapy.svg?branch=master)
+![Build Status](https://travis-ci.com/BackrndSource/wordsapy.svg?branch=master)
 
 Wordsapy is a python integration for the [WordsAPI](https://www.wordsapi.com/), that allows developers to retrieve information about English words like a dictionary.
 
